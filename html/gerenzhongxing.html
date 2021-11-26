@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人中心</title>
+    <style type="text/css">
+ 
+    body{
+                width: 100%;
+				height: 100%;
+			
+				/*设置背景样式*/
+				
+                background-image: linear-gradient(to left,
+            #c6c2d8,#3cadeb);
+                font-family: "宋体";
+                font-size:40px ;
+                
+                }
+            .zhong{
+                width: 500px;
+                height: 600px;
+                border: 10px solid;
+                background-image: linear-gradient(to left,
+            #c6c2d8,#3cadeb);
+                margin: auto;
+            }
+            #button{
+                font-size: 40px;
+                color: springgreen;
+                
+            }
+            label{
+                width: 150px;
+                display: inline-block;
+                text-align: right;
+                font-weight: bold;
+            }
+
+            
+         
+            .d{
+                outline-style: none;
+                border: 1px solid;
+                border-color: blue;
+                border-radius: 3px;
+                padding: 10px 25px;
+            }
+           
+            
+       
+    </style>
+    
+</head>
+<body>
+    <div class="zhong">
+        <from >
+            <center><h3>个人中心</h3><!--那个名字要从数据库导入，我还不太会怎么搞--></center>
+           <label>姓名:</label><input class="d" type="text"/><br>
+            <label>ID:</label><input  class= "d"type="tel"><br>
+            <label>性别:</label><input type="radio" name="sex">女<input type="radio"name="sex">男<br>
+            <label>电话:</label><input  class= "d" type="tel"><br>
+            <label>邮箱:</label><input class= "d" type="email"><br>
+            <label>书本数:</label><input  class= "d"type="number"><br>
+            <br>
+            <center><a  href="修改信息.html"><input  type="submit" name="button" id="button"value="修改个人信息"  ></a></center>
+        </from>
+    </div>
+    
+</body>
+</html>
