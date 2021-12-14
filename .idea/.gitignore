@@ -1,8 +1,8 @@
-# Ä¬ÈÏºöÂÔµÄÎÄ¼ş
+# é»˜è®¤å¿½ç•¥çš„æ–‡ä»¶
 /shelf/
 /workspace.xml
-# Êı¾İÔ´±¾µØ´æ´¢ÒÑºöÂÔÎÄ¼ş
+# Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
-# »ùÓÚ±à¼­Æ÷µÄ HTTP ¿Í»§¶ËÇëÇó
+# åŸºäºç¼–è¾‘å™¨çš„ HTTP å®¢æˆ·ç«¯è¯·æ±‚
 /httpRequests/
