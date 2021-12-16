@@ -1,4 +1,4 @@
-package com.example.teamwork.All.Dao;
+package com.example.teamwork.All.Utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,6 +1,6 @@
 package com.example.teamwork.All.login.Dao;
 
-import com.example.teamwork.All.Dao.ToolHelper;
+import com.example.teamwork.All.Utils.ToolHelper;
 import com.example.teamwork.All.login.Model.NewAccountModel;
 
 import java.sql.ResultSet;
