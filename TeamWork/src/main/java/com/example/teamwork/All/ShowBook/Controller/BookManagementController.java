@@ -23,7 +23,7 @@ public class BookManagementController {
     public String TeamWorkShowController(){
         return "deom";
     }
-    @RequestMapping(value = "BookManagementShow", method = RequestMethod.POST)
+    @RequestMapping(value = "null", method = RequestMethod.POST)
     @ResponseBody
     public List Show(){
         ShowBook show=new ShowBook();

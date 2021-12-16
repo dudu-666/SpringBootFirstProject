@@ -22,17 +22,17 @@ public class NoticeEntity {
     @Column(name = "NoticeType",nullable = false)
     private Long NoticeType;
     @Column(name = "NoticeMessage",nullable = false)
-    private Long NoticeMessage;
+    private String NoticeMessage;
     public Long getNoticeType() {
         return NoticeType;
     }
     public void setNoticeType(Long noticeType) {
         NoticeType = noticeType;
     }
-    public Long getNoticeMessage() {
+    public String getNoticeMessage() {
         return NoticeMessage;
     }
-    public void setNoticeMessage(Long noticeMessage) {
+    public void setNoticeMessage(String noticeMessage) {
         NoticeMessage = noticeMessage;
     }
 }
