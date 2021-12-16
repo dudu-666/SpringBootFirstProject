@@ -2,11 +2,14 @@ package com.example.teamwork.All.login.Dao;
 
 import com.example.teamwork.All.Dao.ToolHelper;
 import com.example.teamwork.All.login.Model.LoginModel;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
 public class UserLoginDao implements ToolHelper {
     private String LoginAccountName;
     private String Password;
