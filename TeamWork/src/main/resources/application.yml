@@ -4,3 +4,6 @@ spring:
     driverClassName: com.mysql.jdbc.Driver
     username: root
     password: dudu
+  batch:
+    jdbc:
+      table-prefix: teamwork
