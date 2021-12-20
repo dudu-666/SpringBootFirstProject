@@ -48,7 +48,7 @@ public class showmember implements memberdao{
       return ml;
    }
 
-   public static void main(String[] args){
+  /** public static void main(String[] args){
       showmember showmember=new showmember();
       System.out.println(showmember.getCount());
       MemberInfo memberInfo=new MemberInfo();
@@ -61,7 +61,7 @@ public class showmember implements memberdao{
          System.out.println(re.toString());
       }
 
-      }
+      }*/
    }
 
 

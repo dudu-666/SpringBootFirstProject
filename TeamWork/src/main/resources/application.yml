@@ -1,9 +1,9 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/teamwork?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://localhost:3305/teamwork?useUnicode=true&characterEncoding=utf8
     driverClassName: com.mysql.jdbc.Driver
     username: root
-    password: dudu
+    password: root
   batch:
     jdbc:
       table-prefix: teamwork

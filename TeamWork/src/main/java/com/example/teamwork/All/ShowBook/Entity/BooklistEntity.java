@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity(name = "BooklistEntity")
+/*@Entity(name = "BooklistEntity")
 @Table(name = "booklist")
 public class BooklistEntity {
     @Id
@@ -74,4 +74,4 @@ public class BooklistEntity {
     public void setId(String id) {
         this.id = id;
     }
-}
+}*/
