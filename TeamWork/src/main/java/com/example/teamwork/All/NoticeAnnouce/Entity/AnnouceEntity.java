@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Table(name = "annouce")
 public class AnnouceEntity {
     @Id
-    @Column(name = "AnnouceId", nullable = false)
+    @Column(name = "Annouce_Id", nullable = false)
     private Long id;
 
     public Long getId() {

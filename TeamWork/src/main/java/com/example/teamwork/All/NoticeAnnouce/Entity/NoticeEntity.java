@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Table(name = "notice")
 public class NoticeEntity {
     @Id
-    @Column(name = "NoticeId", nullable = false)
+    @Column(name = "Notice_Id", nullable = false)
     private Long id;
 
     public Long getId() {
@@ -19,9 +19,9 @@ public class NoticeEntity {
     public void setId(Long id) {
         this.id = id;
     }
-    @Column(name = "NoticeType",nullable = false)
+    @Column(name = "Notice_Type",nullable = false)
     private Long NoticeType;
-    @Column(name = "NoticeMessage",nullable = false)
+    @Column(name = "Notice_Message",nullable = false)
     private String NoticeMessage;
     public Long getNoticeType() {
         return NoticeType;
