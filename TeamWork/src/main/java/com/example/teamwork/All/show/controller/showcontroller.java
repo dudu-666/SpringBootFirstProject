@@ -20,7 +20,7 @@ import java.util.List;
 public class showcontroller {
 
     @RequestMapping(path="showController")
-    public String showgrmp() {return "test0";}
+    public String showgrmp() {return "testshowteam";}
     @RequestMapping(path="returnlogin")
     public String UserLogin(){
         return "UserLogin";
