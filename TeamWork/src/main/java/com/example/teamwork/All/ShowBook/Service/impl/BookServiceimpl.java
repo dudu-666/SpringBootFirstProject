@@ -19,4 +19,26 @@ public class BookServiceimpl implements BooKService {
     public List GetSearchBook(String Sub) {
         return bookListRepository.FindByNameLike(Sub);
     }
+
+    @Override
+    public void CreateNewBook(BooklistEntity booklistEntity) {
+        try {
+            bookListRepository.save(booklistEntity);
+        }catch (Exception e){System.out.println(e);}
+    }
+
+    @Override
+    public void DeleteBook(String Book_Name) {
+        try {
+            bookListRepository.DeleteByName(Book_Name);
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+    @Override
+    public void ChangeBookInf(BooklistEntity booklistEntity) {
+        try {
+            bookListRepository.ChangeBookInf(booklistEntity,booklistEntity.getBookName());
+        }catch (Exception e){System.out.println(e);}
+    }
 }

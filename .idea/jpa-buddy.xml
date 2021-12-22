@@ -3,6 +3,6 @@
   <component name="JpaBuddyIdeaProjectConfig">
     <option name="defaultUnitInitialized" value="true" />
     <option name="reverseEngineeringLastDbConnectionId" value="1666d013-a503-4311-9b1f-907052d7b534" />
-    <option name="reLastEntityCreationPackage" value="TeamWork/src/main/java/com/example/teamwork/All/login/Entity" />
+    <option name="reLastEntityCreationPackage" value="TeamWork/src/main/java/com/example/teamwork/All/ShowBook/Entity" />
   </component>
 </project>
