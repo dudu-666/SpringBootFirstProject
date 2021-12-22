@@ -9,19 +9,19 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class UserLoginDao implements ToolHelper {
-    private String LoginAccountName;
+    private String LoginName;
     private String Password;
     public UserLoginDao(LoginModel loginModel) {
         this.Password = loginModel.getPassword();
-        this.LoginAccountName = loginModel.getLoginAccountName();
+        this.LoginName = loginModel.getLoginAccountName();
     }
     public Boolean Login() throws SQLException,ClassNotFoundException {
-        Connection connection = ToolHelper.getConnect();
-        Statement stmt = connection.createStatement();
-        String url = "Select *from teamwork.user where `loginaccountname` ="+"'"+LoginAccountName+"'";
+        Statement stmt = ToolHelper.getConnect().createStatement();
+        String url = "Select *from teamwork.user where `User_LoginName` ="+"'"+LoginName+"'";
         ResultSet rs = stmt.executeQuery(url);
         while (rs.next()) {
-            String s2 = rs.getString("Upassword");
+            String s2 = rs.getString("User_PassWord");
+            System.out.println(s2);
             if (Password.equals(s2)) {
                 return true;
             }

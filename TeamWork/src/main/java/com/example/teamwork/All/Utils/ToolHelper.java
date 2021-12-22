@@ -10,10 +10,10 @@ import java.util.Locale;
 public interface ToolHelper {
     static Connection getConnect() throws ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = null;
-        String url = "jdbc:mysql://localhost:3305/teamwork?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true&characterEncoding=GBK";
+        Connection con=null;
+        String url = "jdbc:mysql://localhost:3306/teamwork?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true&characterEncoding=GBK";
         String user = "root";
-        String password = "root";
+        String password = "dudu";
         try {
             con = DriverManager.getConnection(url, user, password);
         } catch (Exception e) {

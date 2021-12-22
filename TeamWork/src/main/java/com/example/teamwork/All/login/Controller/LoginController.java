@@ -23,8 +23,11 @@ public class LoginController {
         }
         return "GMLogin";
     }
-    @RequestMapping(value = "UserLoginController",method = RequestMethod.POST)
-    public String UserLogin(LoginModel loginModel){
+    @RequestMapping(value = "UserLoginController11",method = RequestMethod.POST)
+    public String UserLogin(String LoginName,String PassWord){
+        LoginModel loginModel=new LoginModel();
+        loginModel.setLoginAccountName(LoginName);
+        loginModel.setPassword(PassWord);
         UserLoginDao userLoginDao =new UserLoginDao(loginModel);
         try {
             if (userLoginDao.Login()) {

@@ -1,15 +1,15 @@
 package com.example.teamwork.All.login.Model;
 
 public class LoginModel {
-    private String LoginAccountName;
+    private String LoginName;
     private String Password;
 
     public String getLoginAccountName() {
-        return LoginAccountName;
+        return LoginName;
     }
 
     public void setLoginAccountName(String loginAccountName) {
-        LoginAccountName = loginAccountName;
+        LoginName = loginAccountName;
     }
 
     public String getPassword() {
