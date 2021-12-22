@@ -17,7 +17,7 @@ import java.util.List;
 public class BookManagementController {
     @RequestMapping(value = "BookManagementController")
     public String BookManagementControl(){
-        return "test0";
+        return "tushu(1)";
     }
     @RequestMapping(value = "TeamWorkShowController")
     public String TeamWorkShowController(){

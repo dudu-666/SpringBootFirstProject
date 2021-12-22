@@ -8,7 +8,6 @@ import com.example.teamwork.All.login.Model.NewAccountModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class LoginController {
@@ -58,21 +57,16 @@ public class LoginController {
         return "ResetPassword";
     }*/
     @RequestMapping(value = "NewAccountController",method = RequestMethod.POST,produces = "application/json; charset=utf-8")
-    public String NewAccount(NewAccountModel account){
-        NewAccountDao accountDao=new NewAccountDao(account);
-            try {
-                if(accountDao.create())
-                    return "UserLogin";
-                else
-                    return "NewAccount";
-            } catch (Exception e) {
-               System.out.println(e);
-               return "NewAccount";
-            }
-    }
-    @RequestMapping(value = "Test")
-    @ResponseBody
-    public String Test(){
-        return "Success";
+    public String NewAccount(NewAccountModel account) {
+        NewAccountDao accountDao = new NewAccountDao(account);
+        try {
+            if (accountDao.create())
+                return "UserLogin";
+            else
+                return "NewAccount";
+        } catch (Exception e) {
+            System.out.println(e);
+            return "NewAccount";
+        }
     }
 }

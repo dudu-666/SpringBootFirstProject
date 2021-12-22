@@ -32,26 +32,4 @@ public class addmember implements memberdao {
             }
         }
     }
-   public static void main(String[] args){
-        MemberInfo memberInfo=new MemberInfo();
-        memberInfo.setSNO("9887654321");
-        memberInfo.setSName("уе");
-        memberInfo.setSgrade("19");
-        memberInfo.setSsex("m");
-        memberInfo.setSPrize("нч");
-        findPhotobySNO findPhotobySNO=new findPhotobySNO();
-        //findPhotobySNO.findBySNO("2362483567");
-        byte[] photo;
-        photo=findPhotobySNO.findBySNO("1234567899");
-        memberInfo.setPhoto(photo);
-        addmember addmember=new addmember(memberInfo);
-        addmember.add();
-
-
-    }
-
-
-
-
-
 }
