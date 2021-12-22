@@ -5,7 +5,7 @@ import com.example.teamwork.All.Utils.ToolHelper;
 import java.sql.Connection;
 import java.sql.Statement;
 
-public class BorrowList implements ToolHelper {
+public class  BorrowList implements ToolHelper {
     private String Unum,Bnum;
     public BorrowList(String unum, String bnum) {
         Unum = unum;

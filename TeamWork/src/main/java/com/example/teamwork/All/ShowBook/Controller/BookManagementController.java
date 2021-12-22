@@ -19,16 +19,6 @@ public class BookManagementController {
     public String BookManagementControl(){
         return "tushu(1)";
     }
-    @RequestMapping(value = "TeamWorkShowController")
-    public String TeamWorkShowController(){
-        return "deom";
-    }
-    @RequestMapping(value = "null", method = RequestMethod.POST)
-    @ResponseBody
-    public List Show(){
-        ShowBook show=new ShowBook();
-        return show.GetList();
-    }
     @RequestMapping(value = "BookManagementDelete", method = RequestMethod.GET)
     public void Delete(HttpServletRequest request, HttpServletResponse response){
         new DeleteBook(request.getParameter("id")).Delete();

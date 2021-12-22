@@ -5,11 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity(name = "BooklistEntity")
-@Table(name = "booklist")
-public class BooklistEntity {
+@Entity(name = "BookListEntity")
+@Table(name = "book_list")
+public class BookListEntity {
     @Id
-    @Column(name = "Book_Id", nullable = false, length = 20)
     private String id;
 
     private String bookName;
@@ -20,14 +19,14 @@ public class BooklistEntity {
 
     private String bookDetail;
 
-    private Integer bookStatus;
+    private String bookStatus;
 
-    @Column(name = "Book_Status", nullable = false)
-    public Integer getBookStatus() {
+    @Column(name = "Book_Status", nullable = false, length = 8)
+    public String getBookStatus() {
         return bookStatus;
     }
 
-    public void setBookStatus(Integer bookStatus) {
+    public void setBookStatus(String bookStatus) {
         this.bookStatus = bookStatus;
     }
 
@@ -66,7 +65,7 @@ public class BooklistEntity {
     public void setBookName(String bookName) {
         this.bookName = bookName;
     }
-
+    @Column(name = "Book_Id", nullable = false, length = 20)
     public String getId() {
         return id;
     }
