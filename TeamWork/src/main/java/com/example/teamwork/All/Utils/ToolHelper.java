@@ -13,7 +13,7 @@ public interface ToolHelper {
         Connection con=null;
         String url = "jdbc:mysql://localhost:3306/teamwork?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true&characterEncoding=GBK";
         String user = "root";
-        String password = "dudu";
+        String password = "root";
         try {
             con = DriverManager.getConnection(url, user, password);
         } catch (Exception e) {
