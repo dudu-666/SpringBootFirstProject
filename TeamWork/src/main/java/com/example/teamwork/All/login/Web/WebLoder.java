@@ -1,10 +1,10 @@
-package com.example.teamwork.All.login.Controller;
+package com.example.teamwork.All.login.Web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class Loder {
+public class WebLoder {
     @RequestMapping(path ="")
     public String Login(){
         return "Login";

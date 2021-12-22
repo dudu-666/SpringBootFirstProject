@@ -15,4 +15,20 @@ public class LoginServieceimpl implements LoginService {
     public UserEntity Login(String LoginName,String PassWord) {
         return loginRepository.FindByName(LoginName,PassWord);
     }
+
+    @Override
+    public Boolean NewAccount(UserEntity userEntity) {
+        try {
+            loginRepository.save(userEntity);
+            return true;
+        }catch (Exception e){return false;}
+    }
+
+    @Override
+    public Boolean ResetPassWord(String PassWord,String LoginName) {
+        try {
+            loginRepository.ResetPassWord(PassWord,LoginName);
+            return true;
+        }catch (Exception e){return false;}
+    }
 }

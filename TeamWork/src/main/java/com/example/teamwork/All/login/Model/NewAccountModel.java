@@ -1,6 +1,6 @@
 package com.example.teamwork.All.login.Model;
 
-import com.example.teamwork.All.login.Dao.AESUtil;
+import com.example.teamwork.All.Utils.AESUtil;
 
 public class NewAccountModel {
     private String UserName;

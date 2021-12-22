@@ -5,6 +5,7 @@ import com.example.teamwork.All.login.Service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.persistence.Column;
 import javax.servlet.http.HttpSession;
@@ -21,5 +22,16 @@ public class WebLoginController {
             return "Main01";
         }
         else return "Login";
+    }
+    @RequestMapping(value = "UserCreateAccount")
+    public String CreateAccount(UserEntity userEntity){
+        if(loginService.NewAccount(userEntity))
+            return "UserLogin";
+        else return "NewAccount";
+    }
+    @RequestMapping(value = "ResetPassWordSure")
+    @ResponseBody
+    public String ResetPassWordSure(){
+        return null;
     }
 }
