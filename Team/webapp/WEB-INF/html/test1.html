@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="webjars/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="webjars/bootstrap/3.3.5/css/bootstrap.css"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/bootstrap-table/1.18.3/bootstrap-table.min.css"></script>
+    <script type="text/javascript" src="webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/bootstrap-table/1.18.3/bootstrap-table-locale-all.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/bootstrap-table/1.18.3/bootstrap-table-locale-all.min.js"></script>
+    <script type="text/javascript">
+      function get(){
+          $.ajax({async:false,type:"Post",contentType:'application/json',url:"BookManagementShow",success:function (data){
+              var jsonData = typeof data=='string'?JSON.parse(data):data; //jsonData是该下路下的所有区间（json格式）
+              for (var i = 0; i < jsonData.length; i++) {
+                  //alert(jsonData[i].bnum+jsonData[i].bname+jsonData[i].bauthor+jsonData[i].bpublichouse+jsonData[i].detail);
+                  var child = "<tr>"+"<td>" + jsonData[i].bnum +  "</td>"
+                      + "<td>" +  jsonData[i].bname + "</td>"
+                      + "<td>" +  jsonData[i].bauthor + "</td>"
+                      + "<td>"+ jsonData[i].bpublichouse + "</td>"
+                      + "<td>" +  jsonData[i].detail + "</td>"+"</tr>"
+
+                  $(".table_node").append(child);
+                  }
+          }})
+      }
+    </script>
+</head>
+<table>
+    <thead>
+    <tr>
+        <th>书号</th>
+        <th>书名</th>
+        <th>作者</th>
+        <th>出版社</th>
+        <th>详细信息</th>
+    </tr>
+    <tr>
+
+    </tr>
+    </thead>
+
+    <tbody class="table_node">
+    <!--动态载入数据-->
+    <!-- more data -->
+    </tbody>
+    </table>
+<input type="submit" onclick="get()">
+<body>
+<h1></h1>
+</body>
+</html>
