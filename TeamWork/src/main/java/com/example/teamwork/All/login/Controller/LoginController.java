@@ -16,7 +16,7 @@ public class LoginController {
         GMLoginDao loginDao = new GMLoginDao(loginModel);
         try {
             if (loginDao.Login()) {
-                return "MainPage";
+                return "Main01";
             }
         } catch (Exception e) {
             System.out.println(e);
@@ -28,7 +28,7 @@ public class LoginController {
         UserLoginDao userLoginDao =new UserLoginDao(loginModel);
         try {
             if (userLoginDao.Login()) {
-                return "MainPage";
+                return "Main01";
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -37,7 +37,7 @@ public class LoginController {
     }
     @RequestMapping(value = "Back")
     public String Back(){
-        return "MainPage";
+        return "Main01";
     }
     /*@RequestMapping(value = "ResetController",method = RequestMethod.POST)
     public String Reset(Resetdao resetdao){

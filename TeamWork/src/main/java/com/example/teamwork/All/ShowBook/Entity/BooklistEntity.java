@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Table(name = "booklist")
 public class BooklistEntity {
     @Id
-    @Column(name = "Book_Id", nullable = false, length = 20)
+    @Column(name = "Bnum", nullable = false, length = 20)
     private String id;
 
     private String bookName;
@@ -22,7 +22,7 @@ public class BooklistEntity {
 
     private Integer bookStatus;
 
-    @Column(name = "Book_Status", nullable = false)
+    @Column(name = "IsBorrowed", nullable = false)
     public Integer getBookStatus() {
         return bookStatus;
     }
@@ -31,7 +31,7 @@ public class BooklistEntity {
         this.bookStatus = bookStatus;
     }
 
-    @Column(name = "Book_Detail", length = 100)
+    @Column(name = "Bdetail", length = 100)
     public String getBookDetail() {
         return bookDetail;
     }
@@ -40,7 +40,7 @@ public class BooklistEntity {
         this.bookDetail = bookDetail;
     }
 
-    @Column(name = "Book_Publichouse", nullable = false, length = 20)
+    @Column(name = "Bpublichouse", nullable = false, length = 20)
     public String getBookPublichouse() {
         return bookPublichouse;
     }
@@ -49,7 +49,7 @@ public class BooklistEntity {
         this.bookPublichouse = bookPublichouse;
     }
 
-    @Column(name = "Book_Author", nullable = false, length = 20)
+    @Column(name = "Bauthor", nullable = false, length = 20)
     public String getBookAuthor() {
         return bookAuthor;
     }
@@ -58,7 +58,7 @@ public class BooklistEntity {
         this.bookAuthor = bookAuthor;
     }
 
-    @Column(name = "Book_Name", nullable = false, length = 20)
+    @Column(name = "Bname", nullable = false, length = 20)
     public String getBookName() {
         return bookName;
     }

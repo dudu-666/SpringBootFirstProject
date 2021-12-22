@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>团队展示</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.js"></script>
+
+</head>
+<body>
+<div style="margin:100px auto;width:1000px;">
+  <table id="table"></table>
+</div>
+
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">编辑</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="sno">学号</label>
+          <input id="sno" type="text" class="form-control" disabled />
+        </div>
+        <div class="form-group">
+          <label for="sname">姓名</label>
+          <input id="sname" type="text" class="form-control" disabled/>
+        </div>
+        <div class="form-group">
+          <label for="ssex">性别</label>
+          <select id="ssex" class="form-control" disabled>
+            <option value="f">女</option>
+            <option value="m">男</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="sgrade">年级</label>
+          <input id="sgrade" type="text" class="form-control" disabled/>
+        </div>
+        <div class="form-group">
+          <label for="sprize">奖项</label>
+          <input id="sprize" type="text" class="form-control"  />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary" onclick="editInfo()">修改</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $('#table').bootstrapTable({
+    url: "showteam",                         // URL
+    method: "post",                                        // 请求类型
+    contentType: "application/x-www-form-urlencoded",      // post请求必须要有，否则后台接受不到参数
+    sidePagination: "client",                              // 设置在服务端还是客户端分页
+    showRefresh: false,                                    // 是否刷新按钮
+    sortStable: true,                                      // 是否支持排序
+    cache: false,                                          // 是否使用缓存
+    pagination: true,                                      // 是否显示分页
+    search: false,                                         // 是否有搜索框
+    clickToSelect: true,                                   // 是否点击选中行
+    pageNumber: 1,                                         // 首页页码，默认为1
+    pageSize: 5,                                           // 页面数据条数
+    pageList: [5, 10, 20, 30],
+    queryParamsType: "",
+    queryParams: function (params) {
+      return {
+        pageSize: params.pageSize,                     // 每页记录条数
+        pageNumber: params.pageNumber,                 // 当前页索引
+      };
+    },
+    columns: [{
+      field: 'sno',
+      title: '学号',
+      align: "center",
+      halign: "center",
+      valign: 'middle',
+      sortable: true
+    },
+      {
+        field: 'sname',
+        title: '姓名',
+        align: "center",
+        halign: "center",
+        valign: 'middle'
+      },
+      {
+        field: 'sgrade',
+        title: '年级',
+        align: "center",
+        halign: "center",
+        valign: 'middle'
+      },
+      {
+        field: 'ssex',
+        title: '性别',
+        align: "center",
+        halign: "center",
+        valign: 'middle'
+      },{
+        field: 'sprize',
+        title: '奖项',
+        align: "center",
+        halign: "center",
+        valign: 'middle'
+      },
+      {
+        field: 'operate',
+        title: '操作',
+        align: 'center',
+        valign: 'middle',
+        width: 200,
+        events: {
+          'click #edit': function (e, value, row, index) {
+            $('#sno').val(row.sno);
+            $('#sname').val(row.sname);
+            $('#sgrade').val(row.sgrade);
+            $('#ssex').val(row.ssex);
+            $('#sprize').val(row.sprize);
+          },
+          'click #delete': function (e, value, row, index) {
+            deleteInfo(row.sno);
+          }
+        },
+        formatter: function (value, row, index) {
+          var result = "";
+          result += '<button id="edit" class="btn btn-info" data-toggle="modal" data-target="#editModal">编辑</button>';
+          result += '<button id="delete" class="btn btn-danger" style="margin-left:10px;">删除</button>';
+          return result;
+        }
+      }]
+  })
+
+  // 修改信息
+  function editInfo() {
+    $.ajax({
+      type: 'post',
+      url: 'memberupdate',
+      dataType: 'json',
+      data: {
+        SNO: $('#sno').val(),
+        SName: $('#sname').val(),
+        Sgrade: $('#sgrade').val(),
+        SSex: $('#ssex').val(),
+        SPrize: $('#sprize').val()
+      },
+      success: function (data) {
+        if (data == 'Yes') {
+          {$('#table').bootstrapTable('refresh');}
+
+        }
+        else {
+          alert('修改失败');
+        }
+      }
+    })
+    $('#editModal').modal('hide');
+  }
+
+  // 删除信息
+  function deleteInfo(sno) {
+    $.ajax({
+      type: 'get',
+      url: 'memberdelete',
+      dataType: 'String',
+      data: {
+        id: sno
+      },
+      success: function (data) {
+        if (data.status === 200) {
+
+        }
+        else {
+          alert('删除失败');
+        }
+      }
+
+    })
+    refresh();
+  }function refresh(){$('#table').bootstrapTable('refresh');}
+</script>
+</body>
+</html>
