@@ -1,6 +1,7 @@
 package com.example.teamwork.All.ShowBook.Web;
 
 import com.example.teamwork.All.ShowBook.Entity.BookListEntity;
+import com.example.teamwork.All.ShowBook.Entity.BorrowWaitListEntity;
 import com.example.teamwork.All.ShowBook.Entity.BorrowingRecordEntity;
 import com.example.teamwork.All.ShowBook.Service.BooKService;
 import com.example.teamwork.All.ShowBook.Service.BorrowService;
@@ -47,6 +48,17 @@ public class BookManageWebRestController {
     public String BorrowBook(BorrowingRecordEntity BorrowingRecordEntity){
         try {
             borrowService.AddBorrowRecord(BorrowingRecordEntity);
+            return "True";
+        }catch (Exception e){return e.toString();}
+    }
+    @RequestMapping(value = "/ShowBorrowWaitList")
+    public List<BorrowWaitListEntity> ShowBorrowWaitList(){
+        return borrowService.GetAllBorrowWaitList();
+    }
+    @RequestMapping(value = "/BorrowBook")
+    public String BorrowBook(String Book_Id,String User_Id){
+        try {
+            borrowService.BorrowBook(Book_Id,User_Id);
             return "True";
         }catch (Exception e){return e.toString();}
     }

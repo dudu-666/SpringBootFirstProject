@@ -1,6 +1,7 @@
 package com.example.teamwork.All.ShowBook.Service.impl;
 
 import com.example.teamwork.All.ShowBook.Entity.BookListEntity;
+import com.example.teamwork.All.ShowBook.Entity.BorrowWaitListEntity;
 import com.example.teamwork.All.ShowBook.Entity.BorrowingRecordEntity;
 import com.example.teamwork.All.ShowBook.Repository.BookListRepository;
 import com.example.teamwork.All.ShowBook.Repository.BorrowWaitListRepository;
@@ -19,7 +20,7 @@ public class BorrowServiceimpl implements BorrowService {
     @Resource
     BorrowWaitListRepository borrowWaitListRepository;
     @Override
-    public List GetAllBorrowRecordList() {
+    public List<BorrowingRecordEntity> GetAllBorrowRecordList() {
         return borrowingRecordRepository.findAll();
     }
     @Override
@@ -28,17 +29,14 @@ public class BorrowServiceimpl implements BorrowService {
     }
 
     @Override
-    public List GetAllBorrowWaitList() {
+    public List<BorrowWaitListEntity> GetAllBorrowWaitList() {
         return borrowWaitListRepository.findAll();
     }
 
     @Override
-    public List GetAllBorrowRecords() {
-        return borrowingRecordRepository.findAll();
-    }
+    public void BorrowBook(String Book_id,String User_Id) {
 
-    @Override
-    public void BorrowBook(BorrowingRecordEntity borrowingRecordEntity) {borrowingRecordRepository.save(borrowingRecordEntity);}
+    }
 
     @Override
     public void ReturnBook(String Book_Id,String User_Id) {
