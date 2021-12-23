@@ -3,9 +3,7 @@ package com.example.teamwork.All.PersonalCenter.Dao;
 import com.example.teamwork.All.PersonalCenter.Model.UserInfo;
 import com.example.teamwork.All.Utils.ToolHelper;
 
-import javax.tools.Tool;
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.sql.Statement;
 
 public class UpdateUser {

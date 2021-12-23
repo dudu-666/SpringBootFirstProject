@@ -9,6 +9,7 @@ import javax.persistence.Table;
 @Table(name = "book_list")
 public class BookListEntity {
     @Id
+    @Column(name = "Book_Id", nullable = false, length = 20)
     private String id;
 
     private String bookName;
@@ -52,7 +53,6 @@ public class BookListEntity {
     public String getBookAuthor() {
         return bookAuthor;
     }
-
     public void setBookAuthor(String bookAuthor) {
         this.bookAuthor = bookAuthor;
     }
@@ -65,7 +65,7 @@ public class BookListEntity {
     public void setBookName(String bookName) {
         this.bookName = bookName;
     }
-    @Column(name = "Book_Id", nullable = false, length = 20)
+
     public String getId() {
         return id;
     }

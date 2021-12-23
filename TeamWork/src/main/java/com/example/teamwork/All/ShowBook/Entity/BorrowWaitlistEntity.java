@@ -8,14 +8,14 @@ import javax.persistence.*;
 @Table(name = "borrow_waitlist")
 public class BorrowWaitlistEntity {
     @Id
+    @Column(name = "Bnum", nullable = false, length = 20)
     private String id;
 
     private String askingtime;
-
-    private UserEntity unum;
-
     @ManyToOne(optional = false)
     @JoinColumn(name = "Unum", nullable = false)
+    private UserEntity unum;
+
     public UserEntity getUnum() {
         return unum;
     }
@@ -32,7 +32,6 @@ public class BorrowWaitlistEntity {
     public void setAskingtime(String askingtime) {
         this.askingtime = askingtime;
     }
-    @Column(name = "Bnum", nullable = false, length = 20)
     public String getId() {
         return id;
     }
