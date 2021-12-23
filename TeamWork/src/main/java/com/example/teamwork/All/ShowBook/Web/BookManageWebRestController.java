@@ -1,8 +1,7 @@
 package com.example.teamwork.All.ShowBook.Web;
 
 import com.example.teamwork.All.ShowBook.Entity.BookListEntity;
-import com.example.teamwork.All.ShowBook.Entity.BorrowListEntity;
-import com.example.teamwork.All.ShowBook.Repository.BorrowListRepository;
+import com.example.teamwork.All.ShowBook.Entity.BorrowingRecordEntity;
 import com.example.teamwork.All.ShowBook.Service.BooKService;
 import com.example.teamwork.All.ShowBook.Service.BorrowService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,12 +41,12 @@ public class BookManageWebRestController {
     }
     @RequestMapping(value = "/ShowBorrowList")
     public List GetAllBorrowList(){
-        return borrowService.GetAllBorrowList();
+        return borrowService.GetAllBorrowRecordList();
     }
     @RequestMapping(value = "/BorrowBook")
-    public String BorrowBook(BorrowListEntity borrowListEntity){
+    public String BorrowBook(BorrowingRecordEntity BorrowingRecordEntity){
         try {
-            borrowService.AddBorrowRecord(borrowListEntity);
+            borrowService.AddBorrowRecord(BorrowingRecordEntity);
             return "True";
         }catch (Exception e){return e.toString();}
     }

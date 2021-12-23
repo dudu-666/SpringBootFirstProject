@@ -12,7 +12,7 @@ public class Annouceimpl implements AnnouceService {
     @Resource
     AnnouceRepository annouceRepository;
     @Override
-    public List GetAllAnnouce() {
+    public List<AnnouceEntity> GetAllAnnouce() {
         return annouceRepository.findAll();
     }
     @Override

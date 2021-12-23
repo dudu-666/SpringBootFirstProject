@@ -5,6 +5,6 @@ import com.example.teamwork.All.NoticeAnnouce.Entity.AnnouceEntity;
 import java.util.List;
 
 public interface AnnouceService {
-    List GetAllAnnouce();
+    List<AnnouceEntity> GetAllAnnouce();
     void AddAnnouce(AnnouceEntity annouceEntity);
 }

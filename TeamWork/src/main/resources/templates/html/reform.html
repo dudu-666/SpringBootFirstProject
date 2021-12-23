@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>通知公告</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style type="text/css">
+  #marquePic1{
+
+  }
+  </style>
+</head>
+<body>
+<div>重要通知</div>
+<hr/>
+<div id="demo" style="OVERFLOW: hidden; height: 100px;">
+  <div id="marquePic1">
+
+  </div>
+  <div id="marquePic2" valign="top">
+  </div>
+</div>
+<script type="text/javascript" th:src="@{webjars/jquery/3.6.0/jquery.min.js}"></script>
+<script type="text/javascript">
+  $.ajax({
+    type:'post',
+    url:'GetAllAnnouce',
+    dataType:"json",
+    success:function get(data){
+      var out="";
+      var i;
+      var ul=$("<ul></ul>");
+      for(i=0;i<data.length;i++){
+        var reform=data[i];
+        var li ="<li>"+reform.annouceType+reform.annouceMessage+"</li>";
+        ul.append(li);
+
+        // out+='<a href="'+arr[i].url +'">'+
+        //         arr[i].title +'</a><br>';
+
+      }
+      $("#marquePic1").append(ul);
+
+    }
+  })
+  //纵向滚动 需要设置div的高度
+  var speed=30//设置
+  marquePic2.innerHTML=marquePic1.innerHTML
+  function Marquee(){
+    if(demo.scrollTop>=marquePic1.scrollHeight){
+      demo.scrollTop=0
+    }else{
+      demo.scrollTop++
+    }
+  }
+  var MyMar=setInterval(Marquee,speed)
+  demo.onmouseover=function() {clearInterval(MyMar)}
+  demo.onmouseout=function() {MyMar=setInterval(Marquee,speed)}
+</script>
+</body>
+</html>
