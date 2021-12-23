@@ -2,6 +2,7 @@ package com.example.teamwork.All.ShowBook.Web;
 
 import com.example.teamwork.All.ShowBook.Entity.BookListEntity;
 import com.example.teamwork.All.ShowBook.Service.BooKService;
+import com.example.teamwork.All.ShowBook.Service.BorrowService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,9 +11,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "BookManagement")
-public class ShowBookWebRestController {
+public class BookManageWebRestController {
     @Autowired
     private BooKService booKService;
+    @Autowired
+    private BorrowService borrowService;
     @RequestMapping(value = "/ShowAllBook")
     public List GetAllBook(){
         return booKService.GetAllBook();
@@ -34,5 +37,9 @@ public class ShowBookWebRestController {
             booKService.ChangeBookInf(bookListEntity);
             return "True";
         }catch (Exception e){return e.toString();}
+    }
+    @RequestMapping(value = "/ShowBorrowList")
+    public List GetAllBorrowList(){
+        return borrowService.GetAllBorrowList();
     }
 }
