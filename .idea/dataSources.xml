@@ -8,12 +8,5 @@
       <jdbc-url>jdbc:mysql://localhost:3306/teamwork</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="teamwork@localhost [2]" uuid="088e9ba8-519b-4efa-a2bd-3beaadc10ed1">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/teamwork</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
   </component>
 </project>
